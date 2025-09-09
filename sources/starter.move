@@ -49,5 +49,3 @@ public fun editar_estado(veterinaria: &mut Veterinaria, id: u64, estado: String)
     let mascota = veterinaria.mascotas.borrow_mut(id);
     mascota.estado = estado;
 }
-
-public fun
