@@ -40,11 +40,12 @@ public fun eliminar_ultima_mascota(veterinaria: &mut Veterinaria) {
 }
 
 public fun eliminar_mascota(veterinaria: &mut Veterinaria, id: u64) {
+    assert!((veterinaria.mascotas.length() > id), ID_NO_EXISTE);
     veterinaria.mascotas.remove(id);
 }
 
 public fun editar_estado(veterinaria: &mut Veterinaria, id: u64, estado: String) {
-    assert!(!(veterinaria.mascotas.length() > id), ID_NO_EXISTE);
+    assert!((veterinaria.mascotas.length() > id), ID_NO_EXISTE);
     let mascota = veterinaria.mascotas.borrow_mut(id);
     mascota.estado = estado;
 }
