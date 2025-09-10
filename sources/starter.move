@@ -40,7 +40,6 @@ public fun eliminar_ultima_mascota(veterinaria: &mut Veterinaria) {
 }
 
 public fun eliminar_mascota(veterinaria: &mut Veterinaria, id: u64) {
-    assert!(!(veterinaria.mascotas.length() > id), ID_NO_EXISTE);
     veterinaria.mascotas.remove(id);
 }
 
